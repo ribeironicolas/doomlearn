@@ -1,0 +1,60 @@
+{
+  "root": false,
+  "extends": "//",
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "@doomlearn/server": {
+                "allowImportNames": ["AppType"],
+                "message": "The PWA takes only the AppType type from the server, for its hc client."
+              }
+            },
+            "patterns": [
+              {
+                "group": [
+                  "node:*",
+                  "@doomlearn/agents",
+                  "@doomlearn/agents/*",
+                  "@doomlearn/media",
+                  "@doomlearn/media/*",
+                  "@doomlearn/server/*",
+                  "@doomlearn/core",
+                  "@doomlearn/core/*",
+                  "!@doomlearn/core/agent",
+                  "!@doomlearn/core/anchor",
+                  "!@doomlearn/core/api",
+                  "!@doomlearn/core/languages",
+                  "!@doomlearn/core/media",
+                  "!@doomlearn/core/respelling"
+                ],
+                "message": "Node-only code would break the PWA bundle. Import only browser-safe core subpaths: agent, anchor, api, languages, media, respelling."
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["e2e/**", "*.config.ts", "*.config.test.ts", "scripts/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": "off",
+            "noMagicNumbers": "off"
+          }
+        }
+      }
+    }
+  ]
+}

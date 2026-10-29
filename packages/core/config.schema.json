@@ -1,0 +1,411 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "agents": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "stages": {
+          "description": "The Provider, model and effort each agent stage runs with. Applies to the next stage.",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "extract": {
+              "default": {
+                "provider": "claude",
+                "model": "opus",
+                "effort": "medium"
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "claude"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `claude -p --model`.",
+                      "examples": ["opus", "sonnet", "haiku"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "codex"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `codex exec --model`.",
+                      "examples": ["gpt-6-astra"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max", "ultra"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "script": {
+              "default": {
+                "provider": "claude",
+                "model": "opus",
+                "effort": "low"
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "claude"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `claude -p --model`.",
+                      "examples": ["opus", "sonnet", "haiku"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "codex"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `codex exec --model`.",
+                      "examples": ["gpt-6-astra"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max", "ultra"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "verify": {
+              "default": {
+                "provider": "claude",
+                "model": "opus",
+                "effort": "low"
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "claude"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `claude -p --model`.",
+                      "examples": ["opus", "sonnet", "haiku"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "codex"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `codex exec --model`.",
+                      "examples": ["gpt-6-astra"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max", "ultra"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "split": {
+              "default": {
+                "provider": "claude",
+                "model": "opus",
+                "effort": "low"
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "claude"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `claude -p --model`.",
+                      "examples": ["opus", "sonnet", "haiku"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "codex"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `codex exec --model`.",
+                      "examples": ["gpt-6-astra"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max", "ultra"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "scene": {
+              "default": {
+                "provider": "claude",
+                "model": "opus",
+                "effort": "low"
+              },
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "claude"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `claude -p --model`.",
+                      "examples": ["opus", "sonnet", "haiku"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "const": "codex"
+                    },
+                    "model": {
+                      "type": "string",
+                      "description": "Passed to `codex exec --model`.",
+                      "examples": ["gpt-6-astra"]
+                    },
+                    "effort": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "xhigh", "max", "ultra"]
+                    }
+                  },
+                  "required": ["provider", "model", "effort"],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timeoutMinutes": {
+          "default": 10,
+          "description": "How long one agent call may run before it is killed and counted as failed.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "additionalProperties": false
+    },
+    "worker": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "bufferTarget": {
+          "default": 10,
+          "description": "Unseen Clips to keep ready. Provisional until the benchmark.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "dailyClipCap": {
+          "default": 15,
+          "description": "New Clips per day at most. Provisional until the benchmark.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "language": {
+          "default": "pt-BR",
+          "description": "Language new Clips are narrated and captioned in. The UI stays English.",
+          "type": "string",
+          "enum": ["pt-BR", "en", "es"]
+        },
+        "paused": {
+          "default": false,
+          "description": "Worker pause until resumed: the running stage finishes, no new one starts.",
+          "type": "boolean"
+        },
+        "pausedUntil": {
+          "default": null,
+          "description": "Worker pause until this ISO time. A past time is ignored.",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "schedule": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "windows": {
+              "default": [],
+              "description": "Run windows: the worker starts stages only inside one. Empty means always.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "days": {
+                    "default": ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+                    "description": "Days the window starts on; after midnight, a crossing window still counts as its start day. Defaults to every day.",
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+                    }
+                  },
+                  "start": {
+                    "type": "string",
+                    "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+                    "description": "Inclusive, Mac local time."
+                  },
+                  "end": {
+                    "type": "string",
+                    "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$",
+                    "description": "Exclusive. Before `start` crosses midnight; equal to `start` means the whole day."
+                  }
+                },
+                "required": ["start", "end"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "stopAtUsagePercent": {
+          "default": null,
+          "description": "Start no stage once the latest Claude Usage window is at or above this percentage, until it resets. null is off; unknown or stale usage never stops it.",
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "fiveHour": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "sevenDay": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 100
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "server": {
+      "description": "Read when the server starts: a change needs a restart.",
+      "default": {},
+      "type": "object",
+      "properties": {
+        "hosts": {
+          "default": ["127.0.0.1"],
+          "description": "Addresses to listen on. Add your ZeroTier IP to reach the Feed from the phone.",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "port": {
+          "default": 8443,
+          "type": "integer",
+          "minimum": 1024,
+          "maximum": 65535
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,35 @@
+{
+  "name": "doomlearn",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Turns long reading material into a personal feed of short narrated explainer Clips.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.28.3",
+  "scripts": {
+    "preflight": "node apps/server/src/preflight.ts",
+    "prestart": "pnpm preflight",
+    "start": "pnpm --filter @doomlearn/web build && node apps/server/src/main.ts",
+    "bootstrap": "sh packages/media/bootstrap.sh",
+    "doomlearn": "node apps/server/src/cli.ts",
+    "test": "vitest run",
+    "test:e2e": "pnpm --filter @doomlearn/web test:e2e",
+    "smoke": "DOOMLEARN_SMOKE=1 vitest run --silent=false apps/server/src/smoke.test.ts",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "lint": "biome ci .",
+    "config:schema": "node packages/core/src/config-schema.ts && biome format --write packages/core/config.schema.json",
+    "db:generate": "pnpm --filter @doomlearn/core db:generate"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@commitlint/cli": "21.2.3",
+    "@commitlint/config-conventional": "21.2.3",
+    "lefthook": "2.1.16",
+    "vite": "8.3.2",
+    "vitest": "5.0.3"
+  }
+}

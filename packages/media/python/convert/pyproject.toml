@@ -1,0 +1,13 @@
+[project]
+name = "doomlearn-convert"
+version = "0.0.0"
+description = "PDF conversion with pymupdf4llm. ebook.py runs on Calibre's own Python, not this project."
+requires-python = "==3.12.*"
+dependencies = ["pymupdf4llm==1.28.2"]
+
+[dependency-groups]
+dev = ["pytest==8.4.2"]
+
+[tool.uv]
+package = false
+python-preference = "only-managed"

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "ready": {
+          "type": "boolean",
+          "const": true
+        },
+        "backend": {
+          "type": "string",
+          "description": "Which runtime implementation is speaking, e.g. chatterbox-mps"
+        }
+      },
+      "required": [
+        "ready",
+        "backend"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "error"
+      ]
+    }
+  ]
+}

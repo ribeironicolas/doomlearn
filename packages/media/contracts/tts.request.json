@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "out": {
+      "type": "string",
+      "description": "Path of the wav file to write"
+    },
+    "language": {
+      "type": "object",
+      "properties": {
+        "checkpoint": {
+          "type": "string",
+          "enum": [
+            "pt-br",
+            "v3"
+          ],
+          "description": "The Chatterbox pt-br pack, or Multilingual V3"
+        },
+        "languageId": {
+          "type": "string",
+          "description": "Chatterbox's language_id, e.g. pt"
+        },
+        "nfkd": {
+          "type": "boolean",
+          "description": "Whether the text is NFKD-normalized first, as V3's own tokenizer does"
+        }
+      },
+      "required": [
+        "checkpoint",
+        "languageId",
+        "nfkd"
+      ],
+      "description": "The voice of the Clip's Language"
+    }
+  },
+  "required": [
+    "text",
+    "out",
+    "language"
+  ]
+}

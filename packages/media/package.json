@@ -1,0 +1,35 @@
+{
+  "name": "@doomlearn/media",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The local Media port: ebook and PDF conversion, the Python TTS and aligner runtimes, the Remotion render and the final mix.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts",
+    "./scene-api.md": "./remotion/api.md"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "contracts": "node src/contracts.ts"
+  },
+  "dependencies": {
+    "@doomlearn/core": "workspace:*",
+    "@remotion/bundler": "4.0.534",
+    "@remotion/captions": "4.0.534",
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "@remotion/renderer": "4.0.534",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.534",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "@types/react": "19.3.0",
+    "drizzle-orm": "1.0.0-rc.4",
+    "typescript": "^7.0.2"
+  }
+}

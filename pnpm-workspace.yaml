@@ -1,0 +1,16 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  esbuild: true
+  lefthook: true
+
+# A missing or stale node_modules stops `pnpm run` and `pnpm exec` instead of installing. That implicit install
+# runs without CI=true, so lefthook's postinstall would point the shared git hooks at the worktree that ran it.
+verifyDepsBeforeRun: error
+
+# Remotion is built against this exact zod and its CLI flags any other, so one zod serves the whole workspace,
+# drizzle-orm's optional peer included. It moves only with a Remotion bump (CONTRIBUTING.md).
+overrides:
+  zod: 4.5.4

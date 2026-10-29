@@ -1,0 +1,10 @@
+[project]
+name = "doomlearn-align"
+version = "0.0.0"
+description = "Alignment runtime: Qwen3-ForcedAligner-0.6B-8bit through mlx-audio."
+requires-python = "==3.12.*"
+dependencies = ["mlx-audio==0.5.8"]
+
+[tool.uv]
+package = false
+python-preference = "only-managed"

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "summary": { "type": "string" },
+          "angles": {
+            "type": "array",
+            "items": { "enum": ["concrete_example", "analogy", "mechanism", "contrast"] },
+            "minItems": 1
+          }
+        },
+        "required": ["title", "summary", "angles"],
+        "additionalProperties": false
+      },
+      "minItems": 2,
+      "maxItems": 3
+    }
+  },
+  "required": ["concepts"],
+  "additionalProperties": false
+}

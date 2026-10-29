@@ -1,0 +1,23 @@
+{
+  "name": "@doomlearn/agents",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The agent Providers: the Claude and Codex adapters, the Agent port that routes each stage to one, every stage prompt and schema, and the recorded CLI outputs their tests replay.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@doomlearn/core": "workspace:*",
+    "@doomlearn/media": "workspace:*",
+    "drizzle-orm": "1.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "script": [
+    {
+      "speech": "Sabe quando o seu app congela enquanto baixa um arquivo?",
+      "visual": "A phone whose download progress bar gets stuck."
+    },
+    {
+      "speech": "É porque ele está fazendo tudo numa {thread|tréd} só.",
+      "visual": "One line, the thread, with tasks queued on it."
+    },
+    {
+      "speech": "Uma {thread|tréd} é uma linha de execução dentro de um processo.",
+      "visual": "A process box with one thread line inside."
+    }
+  ],
+  "durationMs": 10000,
+  "beats": [
+    {
+      "startMs": 320,
+      "endMs": 2880
+    },
+    {
+      "startMs": 3760,
+      "endMs": 6080
+    },
+    {
+      "startMs": 6880,
+      "endMs": 9440
+    }
+  ],
+  "words": [
+    {
+      "word": "Sabe",
+      "startMs": 320,
+      "endMs": 560
+    },
+    {
+      "word": "quando",
+      "startMs": 560,
+      "endMs": 800
+    },
+    {
+      "word": "o",
+      "startMs": 800,
+      "endMs": 800
+    },
+    {
+      "word": "seu",
+      "startMs": 800,
+      "endMs": 1120
+    },
+    {
+      "word": "app",
+      "startMs": 1120,
+      "endMs": 1280
+    },
+    {
+      "word": "congela",
+      "startMs": 1280,
+      "endMs": 1680
+    },
+    {
+      "word": "enquanto",
+      "startMs": 1680,
+      "endMs": 2000
+    },
+    {
+      "word": "baixa",
+      "startMs": 2000,
+      "endMs": 2400
+    },
+    {
+      "word": "um",
+      "startMs": 2400,
+      "endMs": 2400
+    },
+    {
+      "word": "arquivo?",
+      "startMs": 2400,
+      "endMs": 2880
+    },
+    {
+      "word": "É",
+      "startMs": 3760,
+      "endMs": 3840
+    },
+    {
+      "word": "porque",
+      "startMs": 3840,
+      "endMs": 4080
+    },
+    {
+      "word": "ele",
+      "startMs": 4080,
+      "endMs": 4160
+    },
+    {
+      "word": "está",
+      "startMs": 4160,
+      "endMs": 4320
+    },
+    {
+      "word": "fazendo",
+      "startMs": 4320,
+      "endMs": 4720
+    },
+    {
+      "word": "tudo",
+      "startMs": 4720,
+      "endMs": 5120
+    },
+    {
+      "word": "numa",
+      "startMs": 5120,
+      "endMs": 5280
+    },
+    {
+      "word": "thread",
+      "startMs": 5280,
+      "endMs": 5760
+    },
+    {
+      "word": "só.",
+      "startMs": 5760,
+      "endMs": 6080
+    },
+    {
+      "word": "Uma",
+      "startMs": 6880,
+      "endMs": 7040
+    },
+    {
+      "word": "thread",
+      "startMs": 7040,
+      "endMs": 7360
+    },
+    {
+      "word": "é",
+      "startMs": 7360,
+      "endMs": 7440
+    },
+    {
+      "word": "uma",
+      "startMs": 7440,
+      "endMs": 7520
+    },
+    {
+      "word": "linha",
+      "startMs": 7520,
+      "endMs": 7760
+    },
+    {
+      "word": "de",
+      "startMs": 7760,
+      "endMs": 7840
+    },
+    {
+      "word": "execução",
+      "startMs": 7840,
+      "endMs": 8400
+    },
+    {
+      "word": "dentro",
+      "startMs": 8400,
+      "endMs": 8640
+    },
+    {
+      "word": "de",
+      "startMs": 8720,
+      "endMs": 8800
+    },
+    {
+      "word": "um",
+      "startMs": 8800,
+      "endMs": 8800
+    },
+    {
+      "word": "processo.",
+      "startMs": 8800,
+      "endMs": 9440
+    }
+  ]
+}

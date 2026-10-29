@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* v1's palette, as Tailwind colors: bg-bg, text-muted, border-line, … */
+@theme {
+  --color-bg: #0b0f17;
+  --color-fg: #f3f4f6;
+  --color-muted: #9ca3af;
+  --color-card: #161c28;
+  --color-line: #273042;
+  --color-accent: #facc15;
+  --color-ok: #22c55e;
+  --color-warn: #f59e0b;
+  --color-bad: #ef4444;
+
+  /* After 3 loops, the end hint bounces */
+  --animate-nudge: nudge 1s ease-in-out infinite;
+  @keyframes nudge {
+    0%,
+    100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -14px);
+    }
+  }
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  html,
+  body {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    overscroll-behavior: none;
+  }
+  /* On body only: the root keeps 16px, so Tailwind's rem spacing is v1's pixels. */
+  body {
+    font:
+      15px / 1.4 system-ui,
+      sans-serif;
+  }
+  button {
+    cursor: pointer;
+  }
+}

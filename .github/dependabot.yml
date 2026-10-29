@@ -1,0 +1,34 @@
+# Weekly grouped bumps into main. The owner merges these PRs; agents merge only their own.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # A new release waits 7 days before a PR offers it.
+    cooldown:
+      default-days: 7
+    groups:
+      npm:
+        patterns: ['*']
+    # Every @remotion/* package moves together with a render check, so they are bumped by hand,
+    # and zod with them: Remotion requires one exact zod.
+    ignore:
+      - dependency-name: remotion
+      - dependency-name: '@remotion/*'
+      - dependency-name: zod
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ['*']
+    commit-message:
+      prefix: ci

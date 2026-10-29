@@ -1,0 +1,25 @@
+{
+  "name": "@doomlearn/server",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The app: the HTTPS server, the worker loop and the CLI, wired to the core, agents and media packages.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@doomlearn/agents": "workspace:*",
+    "@doomlearn/core": "workspace:*",
+    "@doomlearn/media": "workspace:*",
+    "@hono/node-server": "^2.1.3",
+    "@hono/zod-validator": "^0.9.1",
+    "drizzle-orm": "1.0.0-rc.4",
+    "hono": "^4.13.13",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "typescript": "^7.0.2"
+  }
+}

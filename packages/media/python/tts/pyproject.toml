@@ -1,0 +1,17 @@
+[project]
+name = "doomlearn-tts"
+version = "0.0.0"
+description = "TTS runtime: Chatterbox Multilingual V3, Brazilian Portuguese pack, on PyTorch MPS."
+requires-python = "==3.12.*"
+dependencies = [
+    # Pins torch==2.6.0. server.py loads the vendored package instead of this one's `chatterbox`, reusing its dependencies.
+    "chatterbox-tts",
+    "soundfile==0.14.0",
+]
+
+[tool.uv]
+package = false
+python-preference = "only-managed"
+
+[tool.uv.sources]
+chatterbox-tts = { git = "https://github.com/resemble-ai/chatterbox.git", rev = "5de7a54aa4e5e2baadb0182dde554908b48b85c2" }

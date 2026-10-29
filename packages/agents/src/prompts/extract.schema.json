@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "angles": {
+      "type": "array",
+      "items": { "enum": ["concrete_example", "analogy", "mechanism", "contrast"] },
+      "minItems": 1
+    },
+    "anchor": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": { "pages": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 } },
+          "required": ["pages"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": { "chapter": { "type": "string" }, "section": { "type": ["string", "null"] } },
+          "required": ["chapter", "section"],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "properties": {
+    "new": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "summary": { "type": "string" },
+          "angles": { "$ref": "#/definitions/angles" },
+          "anchor": { "$ref": "#/definitions/anchor" }
+        },
+        "required": ["title", "summary", "angles", "anchor"],
+        "additionalProperties": false
+      }
+    },
+    "attach": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "conceptId": { "type": "integer" },
+          "anchor": { "$ref": "#/definitions/anchor" }
+        },
+        "required": ["conceptId", "anchor"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["new", "attach"],
+  "additionalProperties": false
+}

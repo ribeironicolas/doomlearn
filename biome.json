@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "root": true,
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": {
+    "includes": [
+      "**",
+      "!packages/core/drizzle",
+      "!packages/agents/src/test/claude",
+      "!packages/media/vendor",
+      "!packages/media/contracts"
+    ]
+  },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 120 },
+  "javascript": { "formatter": { "quoteStyle": "double" } },
+  "linter": {
+    "enabled": true,
+    "rules": { "preset": "recommended", "style": { "noMagicNumbers": "error", "noNonNullAssertion": "off" } }
+  },
+  "assist": { "enabled": false },
+  "overrides": [
+    {
+      "includes": ["**/*.test.ts", "packages/media/remotion/fixture/**"],
+      "linter": { "rules": { "style": { "noMagicNumbers": "off" } } }
+    },
+    { "includes": ["packages/media/remotion/**"], "javascript": { "jsxRuntime": "reactClassic" } }
+  ]
+}

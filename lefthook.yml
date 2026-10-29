@@ -1,0 +1,15 @@
+# Runs at commit time only. Typecheck and tests run in CI, so there is no pre-push hook.
+# `lefthook run` never installs or syncs the hooks; only an explicit `lefthook install` (or
+# pnpm install's postinstall) writes them. Worktrees share one hooks folder, and an automatic
+# sync on `lefthook run` (when the config differs or the checksum is missing) would point it at
+# the lefthook of the worktree that commits.
+no_auto_install: true
+
+pre-commit:
+  jobs:
+    - run: pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - run: pnpm exec commitlint --edit {1}

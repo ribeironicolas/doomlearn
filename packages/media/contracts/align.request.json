@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "audio": {
+      "type": "string",
+      "description": "Path of the wav file"
+    },
+    "text": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "description": "The aligner's name for the Clip's Language, e.g. Portuguese"
+    }
+  },
+  "required": [
+    "audio",
+    "text",
+    "language"
+  ]
+}

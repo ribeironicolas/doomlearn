@@ -1,0 +1,24 @@
+{
+  "name": "@doomlearn/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The domain: Concepts, Passages, Clips, Feed, Reviews, Sources, the pipeline, stats, schema, migrations, ports and fakes.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "drizzle-orm": "1.0.0-rc.4",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.1",
+    "drizzle-kit": "1.0.0-rc.4",
+    "typescript": "^7.0.2"
+  }
+}

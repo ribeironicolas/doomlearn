@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": { "speech": { "type": "string" }, "visual": { "type": "string" } },
+        "required": ["speech", "visual"],
+        "additionalProperties": false
+      },
+      "minItems": 2
+    }
+  },
+  "required": ["beats"],
+  "additionalProperties": false
+}
